@@ -1,11 +1,23 @@
 package com.cloudVendor.api.model;
 
+import jakarta.persistence.*;
+
+
+@Entity
+@Table(name = "Cloud_Vendor_Table")
 public class CloudVendor {
-    private int vendorId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Vendor_ID", nullable = false)
+    private long vendorId;
+    @Column(name = "Vendor_Name")
     private String vendorName;
+    @Column(name = "Vendor_Address")
     private String vendorAddress;
+    @Column(name = "Phone_Number")
     private int phoneNumber;
-    public int getVendorId() {
+
+    public long getVendorId() {
         return vendorId;
     }
 
